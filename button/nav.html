@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navigation {
+            top: 50px;
+            position: relative;
+            width: 65px;
+            height: 300;
+            right: -95.75%;
+            background: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .button {
+            position: relative;
+            left: 2px;
+            width: 60px;
+            height: 60px;
+            background: url(public/images/image.png);
+            transition: 15;
+            color: #fff;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .btn-2 {
+            background-position: 0 -120px;
+        }
+        .btn-3 {
+            background-position: 0 -240px;
+        }
+        .btn-4 {
+            background-position: 0 -360px;
+        }
+        .btn-5 {
+            background-position: 0 -480px;
+        }
+
+        .button:hover .text {
+            right: 60px;
+            
+        }
+
+        .btn-1:hover {
+            background-position: 0 -60px;
+        }
+        .btn-2:hover {
+            background-position: 0 -180px;
+        }
+        .btn-3:hover {
+            background-position: 0 -300px;
+        }
+        .btn-4:hover {
+            background-position: 0 -420px;
+        }
+        .btn-5:hover {
+            background-position: 0 -540px;
+        }
+
+        .text {
+            position: absolute;
+            height: 60px;
+            width: 100px;
+            right: -40px;
+            background: #474343;
+            transition: .5s;
+            z-index: -1;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="button btn-1">
+            <div class="text">Showcase</div>
+        </div>
+        <div class="button btn-2">
+            <div class="text">Blog</div>
+        </div>
+        <div class="button btn-3">
+            <div class="text">Questions</div>
+        </div>
+        <div class="button btn-4">
+            <div class="text">Help</div>
+        </div>
+        <div class="button btn-5">
+            <div class="text">Contact</div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

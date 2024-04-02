@@ -1,0 +1,138 @@
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+body{
+    background-color: gray;
+    font-family: "roboto", sans-serif;
+}
+.box{
+    list-style: none;
+    position: fixed;
+    left: calc(100% - 100px);
+    top: 0;
+    width: 60px;
+    height: auto;
+    background-color: aliceblue;
+    padding: 10px 10px;
+}
+.icon1 {
+    width: 60px;
+    height: 60px;
+    background: url(sidemenu-icons.png);
+    display: inline-block;
+    
+}
+
+.icon1:hover {
+    background-position: 0 -60px;
+}
+.icon2 {
+    width: 60px;
+    height: 60px;
+    background: url(sidemenu-icons.png);
+    display: inline-block;
+    background-position: -60px -120px;
+    
+}
+.icon2:hover {
+    background-position: 0 -180px;
+}
+.icon3 {
+    width: 60px;
+    height: 60px;
+    background: url(sidemenu-icons.png);
+    display: inline-block;
+    background-position:  -180px -240px;
+    
+}
+.icon3:hover {
+    background-position: -240px -300px;
+}
+.icon4 {
+    width: 60px;
+    height: 60px;
+    background: url(sidemenu-icons.png);
+    display: inline-block;
+    background-position:  -300px -360px;
+    
+}
+.icon4:hover {
+    background-position: -360px -420px;
+}
+.icon5 {
+    width: 60px;
+    height: 60px;
+    background: url(sidemenu-icons.png);
+    display: inline-block;
+    background-position:  -420px -480px;
+}
+.icon5:hover {
+    background-position: -480px -540px;
+}
+.menu1{
+    background: black;
+    display: inline;
+    color: aliceblue;
+    padding: 20px ;
+    position: fixed;
+    top: 27px;
+    transform: translateX(-1000px);
+}
+.menu1.menu__open{
+    transform: translateX(413px);
+}
+
+/* .............................. */
+.menu2{
+    background: black;
+    display: inline;
+    color: aliceblue;
+    padding: 20px ;
+    position: fixed;
+    top: 87px;
+    transform: translateX(-1000px);
+}
+.menu2.menu__open2{
+    transform: translateX(450px);
+}
+/* ........................ */
+.menu3{
+    background: black;
+    display: inline;
+    color: aliceblue;
+    padding: 20px ;
+    position: fixed;
+    top: 150px;
+    transform: translateX(-1000px);
+}
+.menu3.menu__open3{
+    transform: translateX(405px);
+}
+/* ................. */
+.menu4{
+    background: black;
+    display: inline;
+    color: aliceblue;
+    padding: 20px ;
+    position: fixed;
+    top: 220px;
+    transform: translateX(-1000px);
+}
+.menu4.menu__open4{
+    transform: translateX(450px);
+}
+/* ................. */
+.menu5{
+    background: black;
+    display: inline;
+    color: aliceblue;
+    padding: 20px ;
+    position: fixed;
+    top: 290px;
+    transform: translateX(-1000px);
+}
+.menu5.menu__open5{
+    transform: translateX(430px);}

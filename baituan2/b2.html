@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .circle {
+           
+            aspect-ratio: 1;
+            /* animation-name: around;
+            animation-duration: 10s;
+            animation-timing-function: ease-in; */
+            animation-name: around;
+            animation-duration: 10s;
+            animation-iteration-count:infinite;
+            background: blue;
+            width: 300px;
+            left: 300px;
+            height: 20px;
+            position: relative;
+
+        }
+        .around {
+            position: relative;
+            background: red;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid black;
+            /* top: 20px;
+            left: 50%; */
+            /* transform: translateX(-50%);
+            animation: 10s linear infinite dot; */
+            animation-name: dot;
+            animation-duration: 10s;
+            animation-iteration-count:infinite;
+            -o-animation-direction: ;
+            /* animation-name: dot1;
+            transform: 0% {rotate()} 100%{}; */
+            
+        }
+        @keyframes around {
+            0% {transform: rotate(-25deg);}
+            25% {transform: rotate(25deg);}
+            50% {transform: rotate(-25deg);}
+            100%{transform:  rotate(55deg);}
+        }
+        @keyframes dot1 {
+            0% {transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+        @keyframes dot {
+            0% {left: 0; top: 0;}
+            50%{left: calc(100% - 20px); top:0;}
+            100%{left:0; top: 0;}
+        }
+        .b{
+            margin-top: 300px;
+            position: absolute;
+            background:white;width: 1000px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="b">
+        <div class="circle">
+            <div class="around">shsh</div>
+        </div>
+    </div>
+</body>
+</html>

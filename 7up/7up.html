@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Back:
+    - width 100px height 300px
+    - hover: width 300px scaleY(1.75)
+    Front:
+    - width: 0 height 370px
+    - hover: width 230px height 370px
+    -->
+    <style>
+        body {
+            /* background-image: url(public/images/7up.jpg); */
+            background: gray;
+            background-size: cover;
+        }
+
+        li {
+            font-size: .8em;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border: 1px solid green;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .circle-white {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+
+        .circle-solid {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: green;
+            border-radius: 50%;
+        }
+        .circle-solid-white {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .circle-solid::after {
+            position: absolute;
+            content: '';
+            /* display: inline-block; */
+            width: 6px;
+            height: 6px;
+            background: green;
+            border-radius: 50%;
+            visibility: hidden;
+            right: .5px;
+            /* transform: translateX(-6px); */
+        }
+
+        .circle::after {
+            position: absolute;
+            /* display: inline-block; */
+            content: '';
+            right: 1px;
+            width: 4px;
+            height: 4px;
+            background: green;
+            border-radius: 50%;
+            visibility: hidden;
+            /* transform: translateX(-6px); */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .side_shape_front {
+            position: fixed;
+            top: 26%;
+            right: 0;
+            fill: #fff;
+            transition: .35s cubic-bezier(.18, -0.61, .93, 1.74);
+        }
+
+        .side_shape_back {
+            position: fixed;
+            top: 30%;
+            right: 0;
+            fill: green;
+            transition: .35s cubic-bezier(0, -0.9, 1, 1.88);
+        }
+
+        .nav {
+            position: fixed;
+            top: 30%;
+            right: 0;
+        }
+
+        .nav:hover .side_shape_back {
+            width: 300px;
+            transform: scaleY(1.75);
+        }
+
+        .nav:hover .side_shape_front {
+            width: 230px;
+            height: 370px;
+        }
+
+        .nav .front-item li {
+            position: relative;
+            z-index: 1;
+            top: 80px;
+            right: -60px;
+            list-style: none;
+            line-height: 1.5;
+        }
+
+        .nav:hover .front-item li {
+            animation: translate 0.35s linear forwards;
+        }
+
+        @keyframes translate {
+            to {
+                transform: translateX(60px);
+            }
+        }
+
+        @keyframes translateAfter {
+            to {
+                transform: translate(-20px, -88px);
+            }
+        }
+
+
+        .nav:hover .front-item li:nth-child(2) {
+            animation-delay: .07s;
+        }
+
+        .nav:hover .front-item li:nth-child(3) {
+            animation-delay: .14s;
+        }
+
+        .nav:hover .front-item li:nth-child(4) {
+            animation-delay: .21s;
+        }
+
+        /* item after */
+        .nav .after-item li {
+            position: relative;
+            z-index: 1;
+            top: 80px;
+            transform: translate(200px, -88px);
+            list-style: none;
+            line-height: 2.5;
+            text-align: right;
+        }
+
+        .nav:hover .after-item li {
+            animation: translateAfter .35s linear forwards;
+        }
+
+        .nav:hover .after-item li:nth-child(2) {
+            animation-delay: .03s;
+        }
+
+        .nav:hover .after-item li:nth-child(3) {
+            animation-delay: .06s;
+        }
+
+        .nav:hover .after-item li:nth-child(4) {
+            animation-delay: .09s;
+        }
+
+        .after-item li:nth-child(2):hover .circle::after,
+        .after-item li:nth-child(3):hover .circle::after,
+        .after-item li:nth-child(4):hover .circle::after {
+            animation: glow1 .45s linear infinite;
+            visibility: visible;
+        }
+
+        .after-item li:nth-child(1):hover .circle-solid::after {
+            animation: glow2 .45s linear infinite;
+            visibility: visible;
+        }
+
+        .content {
+            display: inline-block;
+            position: relative;
+            color: black;
+        }
+
+
+        .after-item li:hover .content {
+            animation: zoom .2s linear forwards;
+        }
+
+        @keyframes zoom {
+            to {font-size: 1em;font-weight:bold;color: green;transform: translateX(-20px);;}
+        }
+
+        @keyframes glow1 {
+            from {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+
+            to {
+                transform: scale(9);
+                opacity: 0;
+            }
+        }
+        @keyframes glow2 {
+            from {
+                transform: scale(0);
+                opacity: 0.3;
+            }
+
+            to {
+                transform: scale(7);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <svg class="side_shape_back" viewBox="0 0 130 200" width="100px" height="300px" preserveAspectRatio="none">
+            <path class="side_shape_back_4" d="M130,200V0c0,39.1-66.8,56.7-66.8,105.1C63.2,139.7,130,154.1,130,200z">
+            </path>
+        </svg>
+        <svg class="side_shape_front" viewBox="0 0 130 200" height="370px" width="0px" preserveAspectRatio="none">
+            <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z">
+            </path>
+        </svg>
+        <ul class="front-item">
+            <li><a href="#"><div class="circle-white"></div></a></li>
+            <li><a href="#"><div class="circle-solid-white"></div></a></li>
+            <li><a href="#"><div class="circle-solid-white"></div></a></li>
+            <li><a href="#"><div class="circle-solid-white"></div></a></li>
+        </ul>
+        <ul class="after-item">
+            <li><a href="#"><div class="content">7UP</div>   <div class="circle-solid"></div></a></li>
+            <li><a href="#"><div class="content">Producten</div> <div class="circle"></div></a></li>
+            <li><a href="#"><div class="content">Geschiedenis</div> <div class="circle"></div></a></li>
+            <li><a href="#"><div class="content">Recept</div> <div class="circle"></div></a>
+
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

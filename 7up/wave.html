@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wave {
+            position: absolute;
+            bottom: 0;
+            background-image: url(public/images/wave.svg);
+            width: 100%;
+            height: 198px;
+        }
+
+        footer .wave:nth-child(1) {
+            animation: moveX 5s ease infinite, moveY 5s ease infinite alternate;
+
+        }
+        footer .wave:nth-child(2), footer .wave:nth-child(3) {
+            animation: moveX 5s ease-in-out infinite 1s,  moveY 5s linear infinite alternate;
+        }
+
+        @keyframes moveX {
+            0% {
+                background-position: 0;
+            }
+
+            100% {background-position: 1600px;}
+        }
+        @keyframes moveY {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {transform: translateY(50px);}
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <footer>
+        <div class="wave w1"></div>
+        <div class="wave w2"></div>
+        <div class="wave w2"></div>
+    </footer>
+</body>
+
+</html>
