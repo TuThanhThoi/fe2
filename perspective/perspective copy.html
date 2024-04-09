@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.cube {
+  color: #ccc;
+  transition: all 0.85s cubic-bezier(.20,.60,.20,1);
+  transform-style: preserve-3d;
+  width: 10em;
+  height: 4em;
+  display: block;
+}
+
+.cube:hover {
+  transform: rotateX(-90deg);
+}
+
+.side {
+  box-sizing: border-box;
+  position: absolute;
+  height: 4em;
+  width: 10em;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+.top {
+  background: rgb(240, 238, 235);
+  color: #222229;
+  transform: rotateX(90deg) translate3d(0, 0, 2em);
+}
+
+.front {
+  background: #222229;
+  color: #fff;
+  transform: translate3d(0, 0, 2em);
+  /* transform: translateX(0 90px); */
+}
+    </style>
+</head>
+
+<body>
+        <a href="" class="cube">
+          <span class="side top">button</span>
+          <span class="side front">button</span>
+        </a>
+</body>
+
+</html>

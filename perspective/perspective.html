@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 200px;
+            /* Độ rộng của phần tử container */
+            height: 100px;
+            /* Chiều cao của phần tử container */
+            perspective: 1000px;
+            /* Đặt perspective */
+        }
+
+        .content-right {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            /* Canh chỉnh nội dung theo chiều ngang vào giữa */
+            align-items: center;
+            /* Canh chỉnh nội dung theo chiều dọc vào giữa */
+            transition: transform 0.5s;
+            /* Hiệu ứng chuyển động */
+        }
+
+        .container:hover .content-right {
+            transform-origin: right center;
+            /* Xác định điểm gốc của transform */
+        }
+
+        .container:hover .content-right:hover {
+            transform: rotateY(-180deg);
+            /* Chuyển động khi hover */
+        }
+
+        /* *************************************** */
+        .content-left {
+            position: absolute;
+            width: 50%;
+            left: 50%;
+            height: 100%;
+            background-color: #d12929;
+            display: flex;
+            justify-content: center;
+            /* Canh chỉnh nội dung theo chiều ngang vào giữa */
+            align-items: center;
+            /* Canh chỉnh nội dung theo chiều dọc vào giữa */
+            transition: transform 0.5s;
+            /* Hiệu ứng chuyển động */
+        }
+
+        .container:hover .content-left {
+            transform-origin: left center;
+            /* Xác định điểm gốc của transform */
+        }
+
+        .container .content-left:hover {
+            transform: rotateY(180deg);
+            /* Chuyển động khi hover */
+        }
+
+         .content-left:hover + .content-right {
+            transform: rotateY(180deg);
+            /* Chuyển động khi hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-right">
+            <------- Hover </div>
+        <div class="content-left">
+            <------- Hover </div>
+    </div>   
+</body>
+
+</html>

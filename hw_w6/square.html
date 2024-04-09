@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border {
+            position: absolute;
+            perspective: 600px;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .square {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            animation: rotate 2.25s infinite linear;
+        }
+
+        .face {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+        }
+
+        .front {
+            transform: translateZ(150px);
+            background: green;
+        }
+
+        .back {
+            transform: translateZ(-150px);
+            background: palevioletred;
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(150px);
+            background: orangered;
+            
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(150px);
+            background: blue;
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+
+            /* to {
+                transform: rotateY(360deg);
+            } */
+            0% {
+                transform: rotateY(0deg) translateY(0px);
+            }
+
+            50% {
+                transform: rotateY(180deg) translateY(20px);
+            }
+
+            100% {
+                transform: rotateY(360deg) translateY(0px);
+            }
+        }
+
+        .front .text {
+            text-align: center;
+            line-height: 260px;
+            transform: translateZ(70px);
+        }
+
+        .back .text {
+            text-align: center;
+            line-height: 260px;
+            transform: translateZ(-70px) rotateY(180deg);
+        }
+
+        .left .text {
+            text-align: center;
+            line-height: 260px;
+            transform: translateZ(70px);
+        }
+
+        .right .text {
+            text-align: center;
+            line-height: 260px;
+            transform: translateZ(70px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border">
+        <div class="square">
+            <div class="face front">
+                <div class="text">
+                    <h1>FRONT</h1>
+                </div>
+            </div>
+            <div class="face back">
+                <div class="text">
+                    <h1>BACK</h1>
+                </div>
+            </div>
+            <div class="face left">
+                <div class="text">
+                    <h1>LEFT</h1>
+                </div>
+            </div>
+            <div class="face right">
+                <div class="text">
+                    <h1>RIGHT</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
